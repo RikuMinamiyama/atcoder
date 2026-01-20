@@ -14,7 +14,7 @@ input :: IO (String, String, [String])
 input = getLine >> getLine >>= \s -> getLine >>= \t -> readLn >>= \q -> replicateM q getLine >>= \ws -> return (s, t, ws)
 
 output :: [String] -> IO ()
-output = mapM_ putStrLn
+output = putStrLn . unlines
 
 solve :: (String, String, [String]) -> [String]
 solve (s, t, ws) = map (go s t) ws
