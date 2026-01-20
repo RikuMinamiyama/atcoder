@@ -19,7 +19,6 @@ acc new abc000
 
 ```bash
 cd abc000/a
-vi main.hs
 ```
 
 サンプルケースを用いてテストを行う。
