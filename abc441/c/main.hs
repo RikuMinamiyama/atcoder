@@ -24,7 +24,6 @@ solve (n, k, x, as) =
     where
         arr = listArray (0, k - 1) . scanl1 (+) . drop (n - k) . reverse . sort $ as
 
-
 -- 二分探索で条件を満たす最小のインデックスを探す
 lowerBoundIdx :: Array Int Int -> (Int -> Bool) -> Maybe Int
 lowerBoundIdx arr p = go lo hi
