@@ -1,0 +1,63 @@
+{
+  "contest": {
+    "id": "abc440",
+    "title": "AtCoder Beginner Contest 440",
+    "url": "https://atcoder.jp/contests/abc440"
+  },
+  "tasks": [
+    {
+      "id": "abc440_a",
+      "label": "A",
+      "title": "Octave",
+      "url": "https://atcoder.jp/contests/abc440/tasks/abc440_a",
+      "directory": {
+        "path": "a",
+        "testdir": "tests"
+      }
+    },
+    {
+      "id": "abc440_b",
+      "label": "B",
+      "title": "Trifecta",
+      "url": "https://atcoder.jp/contests/abc440/tasks/abc440_b",
+      "directory": {
+        "path": "b",
+        "testdir": "tests"
+      }
+    },
+    {
+      "id": "abc440_c",
+      "label": "C",
+      "title": "Striped Horse",
+      "url": "https://atcoder.jp/contests/abc440/tasks/abc440_c",
+      "directory": {
+        "path": "c",
+        "testdir": "tests"
+      }
+    },
+    {
+      "id": "abc440_d",
+      "label": "D",
+      "title": "Forbidden List 2",
+      "url": "https://atcoder.jp/contests/abc440/tasks/abc440_d"
+    },
+    {
+      "id": "abc440_e",
+      "label": "E",
+      "title": "Cookies",
+      "url": "https://atcoder.jp/contests/abc440/tasks/abc440_e"
+    },
+    {
+      "id": "abc440_f",
+      "label": "F",
+      "title": "Egoism",
+      "url": "https://atcoder.jp/contests/abc440/tasks/abc440_f"
+    },
+    {
+      "id": "abc440_g",
+      "label": "G",
+      "title": "Haunted House",
+      "url": "https://atcoder.jp/contests/abc440/tasks/abc440_g"
+    }
+  ]
+}
