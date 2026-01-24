@@ -1,0 +1,13 @@
+module Main where
+
+input :: IO Int
+input = readLn
+
+output :: Int -> IO ()
+output = print
+
+solve :: Int -> Int
+solve n = 2 ^ n - 2 * n
+
+main :: IO ()
+main = input >>= output . solve
