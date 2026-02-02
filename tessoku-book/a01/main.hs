@@ -1,9 +1,7 @@
-{-# OPTIONS_GHC -Wno-incomplete-uni-patterns #-}
-
 module Main where
 
 input :: IO Int
-input = readLn >>= \n -> return n
+input = readLn
 
 output :: Int -> IO ()
 output = print
