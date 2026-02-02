@@ -6,7 +6,6 @@ import Data.ByteString.Char8 qualified as BS
 import Data.Char ( isSpace )
 import Data.List ( unfoldr, foldl' )
 import Control.Monad ( replicateM )
-import Distribution.Utils.Generic (fstOf3, sndOf3, trdOf3)
 
 getInts :: IO [Int]
 getInts = unfoldr (BS.readInt . BS.dropWhile isSpace) <$> BS.getLine
