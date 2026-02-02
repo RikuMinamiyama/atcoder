@@ -27,15 +27,13 @@ researchers n = elems
 
 nCr :: Integral a => a -> a -> a
 nCr n r
-    | n < 0 || r < 0 = undefined
-    | n < r = 0
-    | n == 0 || r == 0 || n == r = 1
-    | otherwise = iter 1 n 1
+    | n <= 0 || r < 0 || n < r = undefined
+    | r == 0 || n == r = 1
+    | otherwise = go 1 n 1
     where
-        r' = min r (n-r)
-        iter p m q
-            | q > r' = p
-            | otherwise = iter (p * m `div` q) (pred m) (succ q)
+        go p m q
+            | q > min r (n-r) = p
+            | otherwise = go (p * m `div` q) (pred m) (succ q)
 
 main :: IO ()
 main = input >>= output . solve
