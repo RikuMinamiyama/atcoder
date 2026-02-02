@@ -6,6 +6,7 @@ import Data.ByteString.Char8 qualified as BS
 import Data.Char ( isSpace )
 import Data.List ( unfoldr, foldl' )
 import Control.Monad ( replicateM )
+import Distribution.Utils.Generic (fstOf3, sndOf3, trdOf3)
 
 getInts :: IO [Int]
 getInts = unfoldr (BS.readInt . BS.dropWhile isSpace) <$> BS.getLine
@@ -17,9 +18,9 @@ output :: Int -> IO ()
 output = print
 
 solve :: [[Int]] -> Int
-solve abcs = maximum [x, y, z]
+solve abcs = maximum [dpA, dpB, dpC]
     where
-        (x, y, z) = foldl' step (0, 0, 0) (map toTriple abcs)
+        (dpA, dpB, dpC) = foldl' step (0, 0, 0) . map toTriple $ abcs
             where
                 step (s, t, u) (a, b, c) = (max t u + a, max u s + b, max s t + c)
 

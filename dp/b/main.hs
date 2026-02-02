@@ -16,12 +16,13 @@ output :: Int -> IO ()
 output = print
 
 solve :: (Int, [Int]) -> Int
-solve (_, []) = 0
-solve (k, h:hs) = finalDp
+solve (k, h:hs) = dp
     where
-        (finalDp, _) : _ = foldl' step [(0, h)] hs
-        step history hi = take k ((newDp, hi) : history)
-            where newDp = minimum [d + abs (hi - hj) | (d, hj) <- history]
+        (dp, _) : _ = foldl' step [(0, h)] hs
+        step history hi = take k ((dp', hi) : history)
+            where
+                dp' = minimum [d + abs (hi - hj) | (d, hj) <- history]
+solve _ = undefined
 
 main :: IO ()
 main = input >>= output . solve

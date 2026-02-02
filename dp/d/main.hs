@@ -25,8 +25,9 @@ solve (w, wvs) = maximum . map snd $ vs
                 step wvs' (a, b) = zip [0..w]
                                  . elems
                                  . accumArray max 0 (0, w)
-                                 . concat
-                                 $ [(w', v') : if w' + a <= w then [(w' + a, v' + b)] else [] | (w', v') <- wvs']
+                                 $ wvs''
+                    where
+                        wvs'' = concatMap (\(w', v') -> (w', v') : [(w' + a, v' + b) | w' + a <= w]) wvs'
 
 toPair :: [Int] -> (Int, Int)
 toPair (a:b:[]) = (a, b)
