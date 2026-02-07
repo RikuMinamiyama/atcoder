@@ -2,7 +2,7 @@
 
 ![atcoder](ac.png)
 
-## AtCoder with Haskell
+## AtCoder in Haskell
 
 競技プログラミングを通して純粋な実装力を身につけることを目指す。
 関数型プログラミング言語Haskellを使用して問題に取り組む。
