@@ -21,15 +21,13 @@ solve as = sort $ case1 ++ case2
                 l = case sums1 of
                     (s:_) -> s
                     _ -> undefined
-                sums1 = map (\(x, y) -> x + y) $ zip sortedAs (reverse sortedAs)
+                sums1 = zipWith (+) sortedAs (reverse sortedAs)
                 sortedAs = sort as
         case2 = if even (length bs) && all (== m) sums2 then [m] else []
             where
-                m = case reverse (sort as) of
-                    (t:_) -> t
-                    _ -> undefined
+                m = maximum as
+                sums2 = zipWith (+) sortedBs (reverse sortedBs)
                 bs = filter (/= m) as
-                sums2 = map (\(x, y) -> x + y) $ zip sortedBs (reverse sortedBs)
                 sortedBs = sort bs
 
 main :: IO ()
